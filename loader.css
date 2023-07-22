@@ -1,0 +1,69 @@
+.loader {
+    width: 32px;
+    height: 72px;
+    display: inline-block;
+    position: relative;
+    border: 5px solid #fff;
+    animation:fill 2s linear infinite alternate;
+    color:#20d0fc;
+    border-radius: 0 0 10px 10px;
+    transform:perspective(140px) rotateX('-45deg');
+    background-color: black;
+    justify-content: center;
+    align-items: center;
+}
+@keyframes fill {
+   0%{
+    box-shadow: 0 0 inset;
+   } 
+   100%{
+    box-shadow: 0 -70px inset;
+   }
+}
+
+
+
+
+
+
+.ring {
+    --uib-size: 100px;
+    --uib-speed: 2s;
+    --uib-color: black;
+    
+    height: var(--uib-size);
+    width: var(--uib-size);
+    vertical-align: middle;
+    transform-origin: center;
+    animation: rotate var(--uib-speed) linear infinite;
+  }
+  
+  .ring circle {
+    fill: none;
+    stroke: var(--uib-color);
+    stroke-dasharray: 1, 200;
+    stroke-dashoffset: 0;
+    stroke-linecap: round;
+    animation: stretch calc(var(--uib-speed) * 0.75) ease-in-out infinite;
+  }
+  
+  @keyframes rotate {
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  
+  @keyframes stretch {
+    0% {
+      stroke-dasharray: 1, 200;
+      stroke-dashoffset: 0;
+    }
+    50% {
+      stroke-dasharray: 90, 200;
+      stroke-dashoffset: -35px;
+    }
+    100% {
+      stroke-dashoffset: -124px;
+    }
+  }
+  
